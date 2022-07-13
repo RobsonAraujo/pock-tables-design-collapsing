@@ -1,81 +1,110 @@
 import {Table,TableBody,TableDataCell,TableRow, TableHeadCell, TableHeader} from '@parkmobile/ui/dist/components'
+import  React, {useState} from 'react'
+// import Collapsible from 'react-collapsible';
+import Collapsible from './components/Collapsible';
+
 
 function App() {
+
+
+  const [open, setOpen]= useState(false)
+
+
   return (
-    
     <div className="App">
-<Table label="A Table Title">
-  <TableHeader>
-    <TableRow>
-      <TableHeadCell>
-        Age
-      </TableHeadCell>
-      <TableHeadCell>
-        First Name
-      </TableHeadCell>
-      <TableHeadCell>
-        Last Name
-      </TableHeadCell>
-    </TableRow>
-  </TableHeader>
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHeadCell>
+            Name
+          </TableHeadCell>
+          <TableHeadCell>
+            Status
+          </TableHeadCell>
+          <TableHeadCell>
+          City
+          </TableHeadCell>
+          <TableHeadCell>
+          State
+          </TableHeadCell>
+          <TableHeadCell>
+          Country
+          </TableHeadCell>
+          <TableHeadCell>
+          Account Manager
+          </TableHeadCell>
+        </TableRow>
+      </TableHeader>
+
+
+
   <TableBody>
     <TableRow>
       <TableDataCell>
-        20
+      1101 New York
       </TableDataCell>
       <TableDataCell>
-        Billy
+      Opened
       </TableDataCell>
       <TableDataCell>
-        Joe
-      </TableDataCell>
-    </TableRow>
-    <TableRow>
-      <TableDataCell>
-        25
+      Washington
       </TableDataCell>
       <TableDataCell>
-        Silly
+      DC
       </TableDataCell>
       <TableDataCell>
-        Boe
-      </TableDataCell>
-    </TableRow>
-    <TableRow>
-      <TableDataCell>
-        40
+      US
       </TableDataCell>
       <TableDataCell>
-        Dlly
+      Chris Corso
       </TableDataCell>
       <TableDataCell>
-        Dough
-      </TableDataCell>
-    </TableRow>
-    <TableRow>
-      <TableDataCell>
-        75
-      </TableDataCell>
-      <TableDataCell>
-        Milly
-      </TableDataCell>
-      <TableDataCell>
-        Moe
-      </TableDataCell>
-    </TableRow>
-    <TableRow>
-      <TableDataCell>
-        4
-      </TableDataCell>
-      <TableDataCell>
-        Yilly
-      </TableDataCell>
-      <TableDataCell>
-        Foe
+        <button onClick={()=> setOpen(!open)} >Preview Lots</button>
       </TableDataCell>
     </TableRow>
   </TableBody>
 </Table>
+
+<Collapsible open={open}>
+
+<Table  >
+  <TableRow>
+  <TableDataCell>
+  <h4>Lot Name</h4>
+    </TableDataCell>
+    <TableDataCell>
+    <h4>Facility Name</h4>
+    </TableDataCell>
+    <TableDataCell>
+    <h4> ID</h4>
+    </TableDataCell>
+    <TableDataCell>
+    <h4>  Status</h4>
+    </TableDataCell>
+    <TableDataCell>
+    <h4>  Max Inventory</h4>
+    </TableDataCell>
+    </TableRow>
+    <TableRow>
+    <TableDataCell>
+    S6 Hereford
+    </TableDataCell>
+    <TableDataCell>
+    University of Virginia Microsite
+    </TableDataCell>
+    <TableDataCell>
+    13608
+    </TableDataCell>
+    <TableDataCell>
+    Opened
+    </TableDataCell>
+    <TableDataCell>
+    68
+    </TableDataCell>
+    </TableRow>
+</Table>
+</Collapsible>
+
     </div>
   );
 }
