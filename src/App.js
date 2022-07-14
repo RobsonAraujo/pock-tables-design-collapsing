@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
-    <Table>
-      <TableHeader>
+    <Table >
+      <TableHeader height="55px">
         <TableRow>
           <TableHeadCell>
             Name
@@ -40,8 +40,8 @@ function App() {
 
   <TableBody>
     <TableRow>
-      <TableDataCell>
-      1101 New York
+      <TableDataCell >
+      <p style={{color: "#0E24C4", fontWeight: "bold"}}> 1101 New York </p>
       </TableDataCell>
       <TableDataCell>
       Opened
@@ -59,7 +59,7 @@ function App() {
       Chris Corso
       </TableDataCell>
       <TableDataCell>
-        <button onClick={()=> setOpen(!open)} >Preview Lots</button>
+        <h4 style={{color: "#0E24C4", cursor: "pointer"}} onClick={()=> setOpen(!open)} >Preview Lots ↓</h4>
       </TableDataCell>
     </TableRow>
   </TableBody>
